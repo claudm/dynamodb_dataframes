@@ -28,7 +28,7 @@ def runSql_API(sql_user_input='', level=logging.WARN):
     """
     global logger
     logger.setLevel(level)
-    inp = sql_user_input.lower()     # select..... full sql
+    inp = sql_user_input     # select..... full sql
 
     if sql_user_input.__contains__('"'):
         logger.exception(' SQL must not contain double quotes ". Type help if unsure.')

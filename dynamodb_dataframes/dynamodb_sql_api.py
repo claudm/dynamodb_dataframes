@@ -75,7 +75,7 @@ def sql(sql_api_input):
 
 
 def runSql_API(l_sql_user_input=[]):
-    l_sql_user_input = [x.lower().strip() for x in l_sql_user_input]
+    l_sql_user_input = [x.strip() for x in l_sql_user_input]
 
     if any(x.__contains__('"') for x in l_sql_user_input) :
         logger.exception(' SQL must not contain double quotes ". Type help if unsure.')
