@@ -82,5 +82,5 @@ If no configuration is provided, the program defaults to point to local instance
 ```bash
 [DEFAULT]
 region_name = us-west-2
-profile_name = 
+profile_name = default
 ```

@@ -40,9 +40,9 @@ class dyanamoOps:
         config.read(kwargs.get('config_file_location', "./dynamodb_dataframes_config.ini"))
         default_config = config['DEFAULT']
         region_name = default_config.get('region_name', 'us-east-1')
-        region_name = default_config.get('profilei_name', 'your_profile')
+        profile_name = default_config.get('profile_name', 'default')
 
-        cls.session = boto3.session.Session(region_name=kwargs.get('region_name', region_name), profile_name=kwargs.get('profile_name',profile_name)
+        cls.session = boto3.session.Session(region_name=kwargs.get('region_name', region_name), profile_name=kwargs.get('profile_name',profile_name))
         cls.resource = cls.session.resource('dynamodb')
 
         cls.client = cls.resource.meta.client
