@@ -27,14 +27,14 @@ Two simple motivations:
 This is the recommended way (unless I decided to publish this package on pypi)
 Simply run the following in the command/shell prompt
 ```sh
-pip install git+https://github.com/mannharleen/dynamodb_dataframes.git
+pip install git+https://github.com/claudm/dynamodb_dataframes.git
 ```
 
 ## From local filesystem
 
 This should be only used if you are not able to connect to github from the machine where you need to pip install
 
-Download the required version file from https://github.com/mannharleen/dynamodb_dataframes/tree/master/dist and copy to the machine lets say on into the folder C:\dist\
+Download the required version file from https://github.com/claudm/dynamodb_dataframes/tree/master/dist and copy to the machine lets say on into the folder C:\dist\
 Then run the following in the command/shell prompt
 ```sh
 pip install dynamodb_dataframes --no-index --find-links file://C:\dist
@@ -57,7 +57,7 @@ print (dynamodb_sql_api.sql("select * from table1ss"))  #-- prints the returned 
 #-- using api2
 print (dynamodb_sql_api2.sql("select * from table1ss", logging.INFO))      #-- prints the returned pandas dataframe and sets the logging level
 ```
-For more examples visit https://github.com/mannharleen/dynamodb_dataframes/tree/master/examples
+For more examples visit https://github.com/claudm/dynamodb_dataframes/tree/master/examples
 
 ### Using the SQL prompt:
 
@@ -82,7 +82,5 @@ If no configuration is provided, the program defaults to point to local instance
 ```bash
 [DEFAULT]
 region_name = us-west-2
-aws_access_key_id =  
-aws_secret_access_key =  
-endpoint_url = http://localhost:8000
+profile_name = 
 ```

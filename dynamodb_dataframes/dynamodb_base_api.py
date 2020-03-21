@@ -39,27 +39,13 @@ class dyanamoOps:
         config = configparser.ConfigParser()
         config.read(kwargs.get('config_file_location', "./dynamodb_dataframes_config.ini"))
         default_config = config['DEFAULT']
-        region_name = default_config.get('region_name', 'us-west-2')
-        aws_access_key_id = default_config.get('aws_access_key_id', ' ')
-        aws_secret_access_key = default_config.get('aws_secret_access_key', ' ')
-        endpoint_url = default_config.get('endpoint_url', 'http://localhost:8000')
+        region_name = default_config.get('region_name', 'us-east-1')
+        region_name = default_config.get('profilei_name', 'your_profile')
 
-        cls.session = boto3.session.Session(region_name=kwargs.get('region_name', region_name),
-        aws_access_key_id=kwargs.get('aws_access_key_id', aws_access_key_id),
-        aws_secret_access_key=kwargs.get('aws_secret_access_key', aws_secret_access_key))
-        cls.resource = cls.session.resource('dynamodb',
-                                            endpoint_url=kwargs.get('endpoint_url', endpoint_url))
+        cls.session = boto3.session.Session(region_name=kwargs.get('region_name', region_name), profile_name=kwargs.get('profile_name',profile_name)
+        cls.resource = cls.session.resource('dynamodb')
 
-        #cls.session = boto3.session.Session(region_name=kwargs.get('region_name', 'us-west-2'),
-        #                                    aws_access_key_id=kwargs.get('aws_access_key_id', ' '),
-        #                                    aws_secret_access_key=kwargs.get('aws_secret_access_key', ' '))
-        #cls.resource = cls.session.resource('dynamodb',
-        #                                    endpoint_url=kwargs.get('endpoint_url', 'http://localhost:8000'))
         cls.client = cls.resource.meta.client
-        # other ways of creating client:
-        # client = boto3.client('dynamodb', endpoint_url='http://localhost:8000', region_name='us-west-2',
-        #                         aws_access_key_id=' ', aws_secret_access_key=' ')
-        # client = session.client('dynamodb', endpoint_url='http://localhost:8000')
 
     @staticmethod
     def help():
