@@ -27,7 +27,7 @@ Two simple motivations:
 This is the recommended way (unless I decided to publish this package on pypi)
 Simply run the following in the command/shell prompt
 ```sh
-pip install git+https://github.com/claudm/dynamodb_dataframes.git
+pip3 install git+https://github.com/claudm/dynamodb_dataframes.git boto3 pandas regex
 ```
 
 ## From local filesystem
