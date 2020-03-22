@@ -62,6 +62,7 @@ For more examples visit https://github.com/claudm/dynamodb_dataframes/tree/maste
 ### Using the SQL prompt:
 
 ```sh
+wget https://raw.githubusercontent.com/claudm/dynamodb_dataframes/master/dynamodb_dataframes/dynamodb_sql_api.py
 $ python dynamodb_sql_api.py
 sql> show tables;
 sql> describe table1ss;
