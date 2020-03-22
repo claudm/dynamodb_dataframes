@@ -17,14 +17,11 @@ def setup(**kwargs):
 def setupREPL():
     print('## Enter values or simply press enter to use default values ##')
     region_name = {'region_name': input('Enter region_name ')}
-    aws_access_key_id = {'aws_access_key_id': input('Enter aws_access_key_id ')}
-    aws_secret_access_key = {'aws_secret_access_key': input('Enter aws_secret_access_key ')}
-    endpoint_url = {'endpoint_url': input('Enter endpoint_url ')}
-    dict_kwargs = {**region_name, **aws_access_key_id, **aws_access_key_id, **endpoint_url}
+    profile_name = {'profile_name': input('Enter profile_name ')}
+    dict_kwargs = {**region_name, **profile_name}
     dict_nonEmpty_kwargs = {k:v for k,v in dict_kwargs.items() if v != ''}
     dynamodb_base_api.dyanamoOps.setup(**dict_nonEmpty_kwargs)
-    os.system('cls')
-    #os.system('clear')
+    os.system('clear')
 
 
 def runCommand():

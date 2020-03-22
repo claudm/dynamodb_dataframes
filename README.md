@@ -75,12 +75,11 @@ sql> describe table1ss;
 When initializing the SQL API, you can set the config as follows:
 ```python
 dynamodb_sql_api.setup('/home/config.ini')              #-- if you want to specify location of config file
-dynamodb_sql_api.setup(aws_access_key_id=ABC, ....)     #-- if you want to specify config as paramters
 ```
 
 If no configuration is provided, the program defaults to point to local instance of dynamodb, i.e. using the following values:
 ```bash
 [DEFAULT]
-region_name = us-west-2
+region_name = us-east-1
 profile_name = default
 ```
